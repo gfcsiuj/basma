@@ -5,10 +5,7 @@ interface LoadingScreenProps {
 }
 
 const loadingMessages = [
-  'نصنع الجمال بدقة وإتقان',
-  'نهتم بأدق التفاصيل في كل عمل',
-  'الجودة هي بصمتنا التي نتركها',
-  'لحظات قليلة ويكون كل شيء جاهزاً...',
+  'جارالتحميل...',
 ];
 
 export const LoadingScreen: React.FC<LoadingScreenProps> = ({ isLoading }) => {
