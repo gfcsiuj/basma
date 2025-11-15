@@ -37,7 +37,7 @@ export const UI_TEXT = {
     instagram: 'انستغرام',
     aboutButton: 'اعرف المزيد عنا',
     contactButton: 'كل طرق التواصل',
-    aboutHomepageText: 'إذا تفكر تغيّر شكل بيتك، تسوّي مطبخ عصري، أو تحتاج شبابيك وأبواب بأعلى جودة—فـ بصمة هي المكان اللي يدخلك وتطلع منه مقتنع 100%.',
+    aboutHomepageText: 'في بصمة، نؤمن أن كل بيت له قصة. مهمتنا هي أن نترجم رؤيتك إلى واقع ملموس، باستخدام أجود المواد والتزامنا بأعلى معايير الحرفية. نحن لا نبني مجرد ديكورات، بل نصنع بصمة فريدة تدوم.',
   },
   en: {
     navHome: 'Home',
@@ -74,7 +74,7 @@ export const UI_TEXT = {
     instagram: 'Instagram',
     aboutButton: 'Learn More About Us',
     contactButton: 'See All Contact Methods',
-    aboutHomepageText: 'Considering a home makeover, a modern kitchen, or high-quality windows and doors? Basma is where you walk in with an idea and walk out 100% confident.',
+    aboutHomepageText: 'At Basma, we believe every home has a story. Our mission is to translate your vision into tangible reality, using the finest materials and our commitment to the highest standards of craftsmanship. We don\'t just build decor; we create a unique, lasting impression.',
   },
 };
 
