@@ -12,6 +12,12 @@ export interface Service {
   description: LocalizedString;
 }
 
+export interface HighlightService {
+  id: number;
+  name: LocalizedString;
+  imageUrl: string;
+}
+
 export interface ServiceCategory {
     id: string;
     name: LocalizedString;

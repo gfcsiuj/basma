@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Language, Page } from '../types';
 import { UI_TEXT, SERVICES, SERVICE_CATEGORIES } from '../constants';
@@ -66,7 +65,7 @@ const HomeAboutSection: React.FC<PageProps> = ({ language, setActivePage }) => {
             </a>
           </div>
           <div className="relative h-80 rounded-lg overflow-hidden shadow-xl group">
-             <img src="https://picsum.photos/seed/team/600/400" alt="Basma team" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+             <img src="https://www.raed.net/img?id=1466878" alt="Basma team" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
           </div>
         </div>
       </div>
@@ -116,7 +115,7 @@ const FeaturedServices: React.FC<{language: Language}> = ({ language }) => {
           {text.featuredTitle}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-          {SERVICES.slice(0, 8).map((service) => (
+          {SERVICES.slice(0, 10).map((service) => (
             <ServiceCard 
               key={service.id} 
               service={service} 
@@ -132,7 +131,7 @@ const FeaturedServices: React.FC<{language: Language}> = ({ language }) => {
 const HomeContactSection: React.FC<PageProps> = ({ language, setActivePage }) => {
   const text = UI_TEXT[language];
   return (
-    <section className="py-16 sm:py-20 bg-[var(--c-bg-alt)]">
+    <section className="pt-16 sm:pt-20 pb-44 sm:pb-48 md:pb-20 bg-[var(--c-bg-alt)]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-[var(--c-content)] mb-4">
           {text.navContact}
