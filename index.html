@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://www.raed.net/img?id=1466527" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بصمة | للألمنيوم والمطابخ الحديثة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Tajawal', 'Poppins', sans-serif;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Base Theme Variables */
+      html[data-theme="light"] body {
+        --c-bg: #fff9f3;
+        --c-bg-alt: #f4ece3;
+        --c-content: #414b3b;
+        --c-action: #d4a373;
+        --c-accent: #5a6850;
+        --c-glass: #bbbbbc;
+        --c-light: #fff;
+        --c-dark: #000;
+        --glass-reflex-dark: 1;
+        --glass-reflex-light: 1;
+        --saturation: 150%;
+        background: var(--c-bg);
+        color: var(--c-content);
+        transition: background 400ms cubic-bezier(1, 0.0, 0.4, 1), color 400ms cubic-bezier(1, 0.0, 0.4, 1);
+      }
+
+      html[data-theme="dark"] body {
+        --c-bg: #1a1a1a;
+        --c-bg-alt: #242424;
+        --c-content: #e0e0e0;
+        --c-action: #d4a373; /* Using light theme action color for consistency */
+        --c-accent: #e4b98c;
+        --c-glass: #bbbbbc;
+        --c-light: #fff;
+        --c-dark: #000;
+        --glass-reflex-dark: 1.5;
+        --glass-reflex-light: 0.5;
+        --saturation: 150%;
+        background: var(--c-bg);
+        color: var(--c-content);
+        transition: background 400ms cubic-bezier(1, 0.0, 0.4, 1), color 400ms cubic-bezier(1, 0.0, 0.4, 1);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideOutRight {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideOutLeft {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+
+      @keyframes pulse-slow {
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .animate-fade {
+        animation-duration: 0.8s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .animate-fade-in-up {
+        animation-name: fadeInUp;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-out;
+      }
+
+      .animate-pulse-badge {
+        animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+
+      /* New Theme Switcher Button */
+      .theme-switcher-button {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 99em;
+          border: none;
+          cursor: pointer;
+          overflow: hidden;
+          padding: 0;
+
+          /* Glassmorphism styles */
+          background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+          backdrop-filter: blur(8px) saturate(var(--saturation));
+          -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+          box-shadow: 
+              inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+              inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent), 
+              inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent), 
+              inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent), 
+              inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent), 
+              inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
+              inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
+              inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
+              0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
+              0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+          
+          transition: 
+              background-color 400ms cubic-bezier(1, 0.0, 0.4, 1),
+              box-shadow 400ms cubic-bezier(1, 0.0, 0.4, 1);
+      }
+
+      .theme-switcher-icon-wrapper {
+          position: relative;
+          width: 28px;
+          height: 28px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      }
+
+      .sun-icon, .moon-icon {
+          position: absolute;
+          --c: var(--c-content);
+          width: 28px;
+          height: 28px;
+          transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      }
+
+      /* Light mode active */
+      .theme-switcher-button[data-theme="light"] .sun-icon {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+      }
+      .theme-switcher-button[data-theme="light"] .moon-icon {
+          opacity: 0;
+          transform: scale(0.5) rotate(90deg);
+      }
+
+      /* Dark mode active */
+      .theme-switcher-button[data-theme="dark"] .theme-switcher-icon-wrapper {
+          transform: rotate(360deg);
+      }
+      .theme-switcher-button[data-theme="dark"] .sun-icon {
+          opacity: 0;
+          transform: scale(0.5) rotate(-90deg);
+      }
+      .theme-switcher-button[data-theme="dark"] .moon-icon {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+      }
+
+      /* Reusable Glass Button */
+      .glass-btn {
+        background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+        backdrop-filter: blur(8px) saturate(var(--saturation));
+        -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+        box-shadow: 
+            inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+            inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent), 
+            inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent), 
+            inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent), 
+            inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent), 
+            inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
+            inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
+            inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
+            0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
+            0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+        
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .glass-btn:hover {
+        background-color: color-mix(in srgb, var(--c-glass) 20%, transparent);
+        transform: translateY(-1px);
+      }
+      .glass-btn:active {
+        transform: translateY(0px);
+        background-color: color-mix(in srgb, var(--c-glass) 25%, transparent);
+      }
+
+
+      /* Glass Bar Styles for BottomNav */
+      .glass-bar {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        border: none;
+        overflow: hidden; /* This clips the overflowing slider */
+        /* Fallback */
+        background-color: rgba(187, 187, 188, 0.12);
+        /* Modern browsers */
+        background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+        
+        backdrop-filter: blur(8px) saturate(var(--saturation));
+        -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+        
+        /* Fallback */
+        box-shadow: 
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+          inset 1.8px 3px 0px -2px rgba(255, 255, 255, 0.9), 
+          inset -2px -2px 0px -2px rgba(255, 255, 255, 0.8), 
+          inset -3px -8px 1px -6px rgba(255, 255, 255, 0.6), 
+          inset -0.3px -1px 4px 0px rgba(0, 0, 0, 0.12), 
+          inset -1.5px 2.5px 0px -2px rgba(0, 0, 0, 0.2), 
+          inset 0px 3px 4px -2px rgba(0, 0, 0, 0.2), 
+          inset 2px -6.5px 1px -4px rgba(0, 0, 0, 0.1), 
+          0px 1px 5px 0px rgba(0, 0, 0, 0.1), 
+          0px 6px 16px 0px rgba(0, 0, 0, 0.08);
+        /* Modern browsers */
+        box-shadow: 
+          inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+          inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent), 
+          inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent), 
+          inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent), 
+          inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent), 
+          inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
+          inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
+          inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
+          0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
+          0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+        
+        transition: 
+          background-color 400ms cubic-bezier(1, 0.0, 0.4, 1),
+          box-shadow 400ms cubic-bezier(1, 0.0, 0.4, 1);
+        border-top: 1px solid color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent);
+      }
+
+      .glass-bar-slider {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        display: block;
+        height: calc(100% - 8px);
+        border-radius: 99em; /* Rounded slider */
+        /* Fallback */
+        background-color: rgba(187, 187, 188, 0.36);
+        /* Modern browsers */
+        background-color: color-mix(in srgb, var(--c-glass) 36%, transparent);
+        z-index: 0;
+        /* Fallback */
+        box-shadow: 
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+          inset 2px 1px 0px -1px rgba(255, 255, 255, 0.9), 
+          inset -1.5px -1px 0px -1px rgba(255, 255, 255, 0.8), 
+          inset -2px -6px 1px -5px rgba(255, 255, 255, 0.6), 
+          inset -1px 2px 3px -1px rgba(0, 0, 0, 0.2), 
+          inset 0px -4px 1px -2px rgba(0, 0, 0, 0.1), 
+          0px 3px 6px 0px rgba(0, 0, 0, 0.08);
+        /* Modern browsers */
+        box-shadow: 
+          inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+          inset 2px 1px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent), 
+          inset -1.5px -1px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent), 
+          inset -2px -6px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent), 
+          inset -1px 2px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
+          inset 0px -4px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
+          0px 3px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+        transition: 
+          background-color 400ms cubic-bezier(1, 0.0, 0.4, 1),
+          box-shadow 400ms cubic-bezier(1, 0.0, 0.4, 1),
+          transform 400ms cubic-bezier(0.65, 0, 0.35, 1);
+      }
+
+      /* Modal, Cart, Toast Styles */
+      .modal-enter {
+        animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .modal-exit {
+        animation: fadeOut 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .modal-content-enter {
+        animation: fadeInUp 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .modal-content-exit {
+        animation: fadeOut 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation-name: fadeOut, slideOutDown;
+      }
+
+      .cart-enter-ltr {
+        animation: slideInRight 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .cart-exit-ltr {
+        animation: slideOutRight 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .cart-enter-rtl {
+        animation: slideInLeft 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .cart-exit-rtl {
+        animation: slideOutLeft 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
