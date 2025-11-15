@@ -77,82 +77,82 @@ export const UI_TEXT = {
 export const SERVICES: Service[] = [
   {
     id: 1,
-    name: { ar: 'مطبخ حديث', en: 'Modern Kitchen' },
-    category: { ar: 'مطابخ', en: 'Kitchens' },
-    imageUrl: 'https://picsum.photos/seed/kitchen1/400/400',
+    name: { ar: 'درج منزل', en: 'House Staircase' },
+    category: { ar: 'واجهات وديكور', en: 'Facades & Decor' },
+    imageUrl: 'https://www.raed.net/img?id=1466830',
     description: {
-      ar: 'تصميم وتنفيذ مطابخ عصرية باستخدام أجود المواد، مع استغلال مثالي للمساحات لتحقيق التوازن بين الجمال والوظيفة.',
-      en: 'Designing and implementing modern kitchens using the finest materials, with optimal space utilization to balance aesthetics and functionality.'
+      ar: 'تصميم وتنفيذ سلالم داخلية عصرية تجمع بين الأناقة والمتانة.',
+      en: 'Design and implementation of modern interior staircases that combine elegance and durability.'
     }
   },
   {
     id: 2,
-    name: { ar: 'أبواب وشبابيك ألمنيوم', en: 'Aluminum Doors & Windows' },
-    category: { ar: 'أبواب وشبابيك', en: 'Doors & Windows' },
-    imageUrl: 'https://picsum.photos/seed/windows/400/400',
+    name: { ar: 'تصميم واجهة منزل', en: 'House Facade Design' },
+    category: { ar: 'واجهات وديكور', en: 'Facades & Decor' },
+    imageUrl: 'https://www.raed.net/img?id=1466832',
     description: {
-      ar: 'نقدم حلولاً متكاملة للأبواب والشبابيك من الألمنيوم عالي الجودة، مع عزل ممتاز للصوت والحرارة وتصاميم تناسب كل الأذواق.',
-      en: 'We provide integrated solutions for high-quality aluminum doors and windows, with excellent sound and heat insulation and designs to suit all tastes.'
+      ar: 'نقدم حلولاً مبتكرة لتصميم وتنفيذ واجهات المنازل التي تعكس ذوقك الرفيع.',
+      en: 'We offer innovative solutions for designing and implementing house facades that reflect your high taste.'
     }
   },
   {
     id: 3,
-    name: { ar: 'واجهة زجاجية', en: 'Glass Facade' },
-    category: { ar: 'واجهات وديكور', en: 'Facades & Decor' },
-    imageUrl: 'https://picsum.photos/seed/facade/400/400',
+    name: { ar: 'غرفة خزائن ملابس', en: 'Walk-in Closet' },
+    category: { ar: 'غرف نوم', en: 'Bedrooms' },
+    imageUrl: 'https://www.raed.net/img?id=1466833',
     description: {
-      ar: 'تصميم وتركيب واجهات زجاجية أنيقة وعملية للمباني التجارية والسكنية، تضفي لمسة من الحداثة وتسمح بمرور الضوء الطبيعي.',
-      en: 'Design and installation of elegant and practical glass facades for commercial and residential buildings, adding a touch of modernity and allowing natural light to pass through.'
+      ar: 'تصميم غرف ملابس متكاملة توفر حلول تخزين ذكية وعملية.',
+      en: 'Designing integrated walk-in closets that provide smart and practical storage solutions.'
     }
   },
   {
     id: 4,
-    name: { ar: 'غرفة نوم مودرن', en: 'Modern Bedroom' },
-    category: { ar: 'غرف نوم', en: 'Bedrooms' },
-    imageUrl: 'https://picsum.photos/seed/bedroom/400/400',
+    name: { ar: 'تصميم مطبخ', en: 'Kitchen Design' },
+    category: { ar: 'مطابخ', en: 'Kitchens' },
+    imageUrl: 'https://www.raed.net/img?id=1466834',
     description: {
-      ar: 'نصمم غرف نوم تجمع بين الراحة والأناقة، باستخدام ديكورات MDF عصرية وتصاميم مبتكرة تخلق مساحة هادئة ومريحة.',
-      en: 'We design bedrooms that combine comfort and elegance, using modern MDF decorations and innovative designs to create a calm and comfortable space.'
+      ar: 'مطابخ مصممة خصيصاً لتلبية احتياجاتك، مع التركيز على الجودة والتصميم الفريد.',
+      en: 'Custom-designed kitchens to meet your needs, with a focus on quality and unique design.'
     }
   },
   {
     id: 5,
-    name: { ar: 'شاور حديث', en: 'Modern Shower' },
-    category: { ar: 'حمامات', en: 'Bathrooms' },
-    imageUrl: 'https://picsum.photos/seed/shower/400/400',
+    name: { ar: 'ديكور محل مجوهرات', en: 'Jewelry Store Decor' },
+    category: { ar: 'واجهات وديكور', en: 'Facades & Decor' },
+    imageUrl: 'https://www.raed.net/img?id=1466835',
     description: {
-        ar: 'تركيب شاورات حديثة بتصاميم زجاجية فاخرة، تمنح حمامك مظهراً عصرياً وشعوراً بالاتساع.',
-        en: 'Installation of modern showers with luxurious glass designs, giving your bathroom a contemporary look and a feeling of spaciousness.'
+      ar: 'تنفيذ ديكورات تجارية فاخرة تبرز جمال معروضاتك وتجذب العملاء.',
+      en: 'Implementation of luxurious commercial decorations that highlight the beauty of your displays and attract customers.'
     }
   },
   {
     id: 6,
-    name: { ar: 'ديكور MDF', en: 'MDF Decoration' },
-    category: { ar: 'واجهات وديكور', en: 'Facades & Decor' },
-    imageUrl: 'https://picsum.photos/seed/mdf/400/400',
+    name: { ar: 'نوافذ ألمنيوم', en: 'Aluminum Windows' },
+    category: { ar: 'أبواب وشبابيك', en: 'Doors & Windows' },
+    imageUrl: 'https://www.raed.net/img?id=1466837',
     description: {
-        ar: 'تنفيذ كافة الديكورات الداخلية باستخدام ألواح MDF عالية الجودة، بما في ذلك المحجرات الحديثة وتغليف الجدران.',
-        en: 'Implementation of all interior decorations using high-quality MDF panels, including modern railings and wall cladding.'
+      ar: 'نوافذ ألمنيوم عالية الجودة توفر عزلاً ممتازاً للصوت والحرارة مع تصاميم عصرية.',
+      en: 'High-quality aluminum windows that provide excellent sound and heat insulation with modern designs.'
     }
   },
   {
     id: 7,
-    name: { ar: 'مطبخ بتصميم كلاسيكي', en: 'Classic Design Kitchen' },
-    category: { ar: 'مطابخ', en: 'Kitchens' },
-    imageUrl: 'https://picsum.photos/seed/kitchen2/400/400',
+    name: { ar: 'واجهة بيت', en: 'House Facade' },
+    category: { ar: 'واجهات وديكور', en: 'Facades & Decor' },
+    imageUrl: 'https://www.raed.net/img?id=1466846',
     description: {
-        ar: 'تصاميم مطابخ تجمع بين فخامة الكلاسيكية ومتانة المواد الحديثة، لخلق تحفة فنية في منزلك.',
-        en: 'Kitchen designs that combine classic luxury with the durability of modern materials to create a masterpiece in your home.'
+      ar: 'تصميم وتنفيذ واجهات خارجية للمنازل تجمع بين الجمالية والجودة العالية.',
+      en: 'Design and implementation of exterior house facades that combine aesthetics and high quality.'
     }
   },
   {
     id: 8,
-    name: { ar: 'مغاسل كوارتز وMDF', en: 'Quartz & MDF Sinks' },
-    category: { ar: 'حمامات', en: 'Bathrooms' },
-    imageUrl: 'https://picsum.photos/seed/sink/400/400',
+    name: { ar: 'ديكور مطبخ', en: 'Kitchen Decor' },
+    category: { ar: 'مطابخ', en: 'Kitchens' },
+    imageUrl: 'https://www.raed.net/img?id=1466847',
     description: {
-        ar: 'تصنيع وتركيب مغاسل فاخرة من الكوارتز وMDF، تتميز بالمتانة ومقاومة الماء والتصاميم العصرية.',
-        en: 'Manufacturing and installation of luxury sinks from quartz and MDF, characterized by durability, water resistance, and modern designs.'
+      ar: 'لمسات فنية وديكورات مبتكرة لمطبخك تضفي عليه طابعاً فريداً وعصرياً.',
+      en: 'Artistic touches and innovative decorations for your kitchen that give it a unique and modern character.'
     }
   },
 ];
