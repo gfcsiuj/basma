@@ -33,6 +33,9 @@ export const UI_TEXT = {
     addressLocation: 'النجف الاشرف - حي السلام شارع الحزام الأخضر مقابل مطعم ابن هندول',
     whatsapp: 'واتساب',
     telegram: 'تلجرام',
+    aboutButton: 'اعرف المزيد عنا',
+    contactButton: 'كل طرق التواصل',
+    aboutHomepageText: 'إذا تفكر تغيّر شكل بيتك، تسوّي مطبخ عصري، أو تحتاج شبابيك وأبواب بأعلى جودة—فـ بصمة هي المكان اللي يدخلك وتطلع منه مقتنع 100%.',
   },
   en: {
     navHome: 'Home',
@@ -65,6 +68,9 @@ export const UI_TEXT = {
     addressLocation: 'Najaf Al-Ashraf - Hay Al-Salam - Green Belt St - Opposite Ibn Hindol Restaurant',
     whatsapp: 'WhatsApp',
     telegram: 'Telegram',
+    aboutButton: 'Learn More About Us',
+    contactButton: 'See All Contact Methods',
+    aboutHomepageText: 'Considering a home makeover, a modern kitchen, or high-quality windows and doors? Basma is where you walk in with an idea and walk out 100% confident.',
   },
 };
 
