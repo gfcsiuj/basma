@@ -5,8 +5,14 @@ interface LoadingScreenProps {
 }
 
 const loadingMessages = [
-  'جارالتحميل...',
+  'صياغة التفاصيل...',
+  'وضع اللمسات الأخيرة...',
+  'تحضير تحفتك الفنية...',
+  'الجودة تتطلب القليل من الوقت...',
 ];
+
+const FINGERPRINT_IMAGE_URL = 'https://www.raed.net/img?id=1467308';
+const LOGO_IMAGE_URL = 'https://www.raed.net/img?id=1466527';
 
 export const LoadingScreen: React.FC<LoadingScreenProps> = ({ isLoading }) => {
   const [isHiding, setIsHiding] = useState(false);
@@ -33,18 +39,13 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ isLoading }) => {
       aria-busy={!isHiding}
     >
       <div className="loading-container">
-        <div className="glass-loader">
-          <svg className="progress-ring" viewBox="0 0 180 180">
-            <circle
-              className="progress-ring__circle"
-              strokeWidth="4"
-              fill="transparent"
-              r="80"
-              cx="90"
-              cy="90"
-            />
-          </svg>
-          <img src="https://www.raed.net/img?id=1466527" alt="Basma Logo Loading" className="w-24 h-24 loading-logo" />
+        <div className="fingerprint-container">
+            <div className="logo-reveal-wrapper">
+                <img src={LOGO_IMAGE_URL} alt="شعار بصمة" className="logo-reveal" />
+            </div>
+            <div className="fingerprint-reveal-wrapper">
+                <img src={FINGERPRINT_IMAGE_URL} alt="تحميل البصمة" className="fingerprint-reveal" />
+            </div>
         </div>
         <div className="loading-text-container flex flex-col items-center">
           <h2 className="text-3xl font-bold text-[var(--c-content)]">بصمة</h2>
@@ -53,7 +54,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ isLoading }) => {
       </div>
       <div className="loading-messages">
         {loadingMessages.map((msg, index) => (
-            <span key={index} style={{ animationDelay: `${index * 3.5}s` }}>
+            <span key={index} style={{ animationDelay: `${index * 4}s` }}>
                 {msg}
             </span>
         ))}

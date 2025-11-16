@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
     useEffect(() => {
         // Simulate asset loading to show the loader
-        const timer = setTimeout(() => setIsLoading(false), 3500);
+        const timer = setTimeout(() => setIsLoading(false), 6500);
         return () => clearTimeout(timer);
     }, []);
 

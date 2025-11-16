@@ -35,6 +35,7 @@
         --saturation: 150%;
         --c-footer-bg: var(--c-content);
         --c-footer-text: var(--c-bg);
+        --is-dark: 0;
         background: var(--c-bg);
         color: var(--c-content);
         transition: background 400ms cubic-bezier(1, 0.0, 0.4, 1), color 400ms cubic-bezier(1, 0.0, 0.4, 1);
@@ -54,6 +55,7 @@
         --saturation: 150%;
         --c-footer-bg: var(--c-bg-alt);
         --c-footer-text: var(--c-content);
+        --is-dark: 1;
         background: var(--c-bg);
         color: var(--c-content);
         transition: background 400ms cubic-bezier(1, 0.0, 0.4, 1), color 400ms cubic-bezier(1, 0.0, 0.4, 1);
@@ -413,11 +415,45 @@
         from { transform: scale(0.8); opacity: 0; }
         to { transform: scale(1); opacity: 1; }
       }
-
-      @keyframes draw-circle {
-        to { stroke-dashoffset: 0; }
+      
+      @keyframes scan-4-swipes {
+        0% { transform: translateY(-10px); }
+        22% { transform: translateY(160px); }
+        25% { transform: translateY(160px); }
+        47% { transform: translateY(-10px); }
+        50% { transform: translateY(-10px); }
+        72% { transform: translateY(160px); }
+        75% { transform: translateY(160px); }
+        97% { transform: translateY(-10px); }
+        100% { transform: translateY(-10px); }
+      }
+      
+      @keyframes reveal-fingerprint-4-swipes {
+        0% { clip-path: inset(0 0 100% 0); opacity: 1; }
+        22% { clip-path: inset(0 0 0 0); opacity: 1; }
+        25% { clip-path: inset(0 0 0 0); opacity: 1; }
+        25.1% { opacity: 0; }
+        50% { opacity: 0; }
+        50.1% { clip-path: inset(0 0 100% 0); opacity: 1; }
+        72% { clip-path: inset(0 0 0 0); opacity: 1; }
+        75% { clip-path: inset(0 0 0 0); opacity: 1; }
+        75.1% { opacity: 0; }
+        100% { opacity: 0; }
       }
 
+      @keyframes reveal-logo-4-swipes {
+        0% { opacity: 0; }
+        25% { opacity: 0; }
+        25.1% { clip-path: inset(100% 0 0 0); opacity: 1; }
+        47% { clip-path: inset(0 0 0 0); opacity: 1; }
+        50% { clip-path: inset(0 0 0 0); opacity: 1; }
+        50.1% { opacity: 0; }
+        75% { opacity: 0; }
+        75.1% { clip-path: inset(100% 0 0 0); opacity: 1; }
+        97% { clip-path: inset(0 0 0 0); opacity: 1; }
+        100% { clip-path: inset(0 0 0 0); opacity: 1; }
+      }
+      
       @keyframes message-fade {
         0%, 100% { opacity: 0; transform: translateY(5px); }
         15%, 85% { opacity: 1; transform: translateY(0); }
@@ -429,56 +465,60 @@
         align-items: center;
         justify-content: center;
         gap: 1.5rem;
-      }
-      
-      .glass-loader {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 160px;
-        height: 160px;
-        border-radius: 99em;
-        background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
-        backdrop-filter: blur(8px) saturate(var(--saturation));
-        -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
-        box-shadow: 
-            inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
-            inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent), 
-            inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent), 
-            inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent), 
-            inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent), 
-            inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
-            inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent), 
-            inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
-            0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 
-            0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
-        
-        transition: 
-            background-color 400ms cubic-bezier(1, 0.0, 0.4, 1),
-            box-shadow 400ms cubic-bezier(1, 0.0, 0.4, 1);
         animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
-      .loading-logo {
-        animation: scaleIn 0.8s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        opacity: 0;
+      .fingerprint-container {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .fingerprint-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: var(--c-content);
+        opacity: 0.5;
+        border-radius: 2px;
+        animation: scan-4-swipes 6s 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
       }
 
-      .progress-ring {
+      .fingerprint-reveal-wrapper, .logo-reveal-wrapper {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-90deg);
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        height: 100%;
       }
-      .progress-ring__circle {
-        stroke: var(--c-action);
-        stroke-linecap: round;
-        stroke-dasharray: 503; /* Circumference of circle with r=80 */
-        stroke-dashoffset: 503;
-        animation: draw-circle 2.5s 0.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      
+      .fingerprint-reveal-wrapper {
+        animation: reveal-fingerprint-4-swipes 6s 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      }
+      
+      .fingerprint-reveal {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: invert(var(--is-dark));
+      }
+
+      .logo-reveal-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: reveal-logo-4-swipes 6s 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      }
+
+      .logo-reveal {
+        width: 85%;
+        height: 85%;
+        object-fit: contain;
+        filter: invert(var(--is-dark));
       }
       
       .loading-text-container {
@@ -503,6 +543,7 @@
         color: var(--c-content);
         opacity: 0.7;
         min-height: 2em;
+        width: 250px;
       }
       .loading-messages span {
         position: absolute;
@@ -511,7 +552,7 @@
         left: 0;
         opacity: 0;
         animation-name: message-fade;
-        animation-duration: 3.5s;
+        animation-duration: 4s;
         animation-iteration-count: infinite;
       }
     </style>

@@ -79,3 +79,9 @@ export const InfoIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
 );
+
+export const FingerprintIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.588 8.188M7.864 4.243a7.5 7.5 0 00-5.614 5.072M12 21.75a7.5 7.5 0 005.614-12.428M12 21.75L12 18M12 21.75v-2.625c0-1.02.39-1.983.996-2.741M16.5 13.5L16.5 18m0 0v2.625m0-2.625a7.5 7.5 0 00-3.496-6.491M16.5 18c-1.983 0-3.824.79-5.132 2.132m0 0a7.5 7.5 0 01-5.614-5.072M4.5 10.5a7.5 7.5 0 011.588-4.912M4.5 10.5L4.5 15m0 0v3.375m0-3.375a7.5 7.5 0 013.496-6.491M4.5 15c1.983 0 3.824.79 5.132 2.132m6.364-6.364a7.5 7.5 0 015.614 5.072M12 4.5a7.5 7.5 0 015.614 5.072M12 4.5L12 9m0 0v3.375m0-3.375a7.5 7.5 0 00-3.496 6.491M12 9c-1.983 0-3.824.79-5.132 2.132"/>
+    </svg>
+);
