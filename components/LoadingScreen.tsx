@@ -5,10 +5,7 @@ interface LoadingScreenProps {
 }
 
 const loadingMessages = [
-  'صياغة التفاصيل...',
-  'وضع اللمسات الأخيرة...',
-  'تحضير تحفتك الفنية...',
-  'الجودة تتطلب القليل من الوقت...',
+  'جار التحميل...',
 ];
 
 const FINGERPRINT_IMAGE_URL = 'https://www.raed.net/img?id=1467308';

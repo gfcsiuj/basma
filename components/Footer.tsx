@@ -1,5 +1,5 @@
 import React from 'react';
-import { UI_TEXT } from '../constants';
+import { UI_TEXT, MAP_URL } from '../constants';
 import type { Language, Page } from '../types';
 import { WhatsAppIcon, TelegramIcon, InstagramIcon } from './icons/Icons';
 
@@ -43,7 +43,17 @@ export const Footer: React.FC<FooterProps> = ({ language, setActivePage }) => {
               <h3 className="text-lg font-semibold mb-4">{text.footerContact}</h3>
               <ul className="space-y-2 text-[var(--c-footer-text)]/80">
                 <li>{text.whatsapp}: 07846699222</li>
-                <li>{text.addressLocation}</li>
+                <li>
+                  {text.addressLocation}
+                  <a 
+                    href={MAP_URL} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="block text-sm text-[var(--c-footer-text)]/90 hover:text-[var(--c-footer-text)] underline mt-1"
+                  >
+                    {text.viewOnMap}
+                  </a>
+                </li>
               </ul>
               <div className="flex space-x-4 rtl:space-x-reverse mt-4">
                 <a href="https://wa.me/9647846699222" target="_blank" rel="noopener noreferrer" className="text-[var(--c-footer-text)]/80 hover:text-[var(--c-footer-text)] transition-colors duration-200">

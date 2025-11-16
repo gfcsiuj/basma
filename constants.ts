@@ -1,4 +1,3 @@
-
 import type { Service, ServiceCategory, HighlightService } from './types';
 
 export const UI_TEXT = {
@@ -38,6 +37,7 @@ export const UI_TEXT = {
     aboutButton: 'اعرف المزيد عنا',
     contactButton: 'كل طرق التواصل',
     aboutHomepageText: 'في بصمة، نؤمن أن كل بيت له قصة. مهمتنا هي أن نترجم رؤيتك إلى واقع ملموس، باستخدام أجود المواد والتزامنا بأعلى معايير الحرفية. نحن لا نبني مجرد ديكورات، بل نصنع بصمة فريدة تدوم.',
+    viewOnMap: 'عرض على الخريطة',
   },
   en: {
     navHome: 'Home',
@@ -75,8 +75,11 @@ export const UI_TEXT = {
     aboutButton: 'Learn More About Us',
     contactButton: 'See All Contact Methods',
     aboutHomepageText: 'At Basma, we believe every home has a story. Our mission is to translate your vision into tangible reality, using the finest materials and our commitment to the highest standards of craftsmanship. We don\'t just build decor; we create a unique, lasting impression.',
+    viewOnMap: 'View on Map',
   },
 };
+
+export const MAP_URL = 'https://www.google.com/maps/search/?api=1&query=مطعم+ابن+هندول،+النجف';
 
 export const HIGHLIGHT_SERVICES: HighlightService[] = [
   { id: 1, name: { ar: 'مطابخ حديثة بتصاميم فاخرة وعمل متقن', en: 'Modern kitchens with luxury designs' }, imageUrl: 'https://www.raed.net/img?id=1466859' },

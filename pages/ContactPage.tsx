@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { UI_TEXT } from '../constants';
+import { UI_TEXT, MAP_URL } from '../constants';
 import type { Language } from '../types';
 import { WhatsAppIcon, TelegramIcon, MapPinIcon, InstagramIcon } from '../components/icons/Icons';
 
@@ -61,7 +60,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
                 <MapPinIcon className="w-8 h-8 text-[var(--c-accent)]" />
             </div>
             <h3 className="font-bold text-xl mb-2">{text.address}</h3>
-            <p className="text-[var(--c-content)]/80 max-w-sm mx-auto">{text.addressLocation}</p>
+            <p className="text-[var(--c-content)]/80 max-w-sm mx-auto mb-4">{text.addressLocation}</p>
+            <a
+                href={MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block glass-btn py-2 px-6 rounded-full text-sm font-semibold text-[var(--c-content)] shadow-md"
+            >
+                {text.viewOnMap}
+            </a>
           </div>
         </div>
       </section>

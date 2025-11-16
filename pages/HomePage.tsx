@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Language, Page } from '../types';
-import { UI_TEXT, SERVICES, SERVICE_CATEGORIES } from '../constants';
+import { UI_TEXT, SERVICES, SERVICE_CATEGORIES, MAP_URL } from '../constants';
 import { ServiceCard } from '../components/ServiceCard';
 import { WhatsAppIcon, MapPinIcon } from '../components/icons/Icons';
 
@@ -146,7 +146,17 @@ const HomeContactSection: React.FC<PageProps> = ({ language, setActivePage }) =>
           </a>
           <div className="flex items-center gap-4">
             <MapPinIcon className="w-8 h-8 text-[var(--c-accent)]" />
-            <span className="text-lg font-semibold max-w-xs">{text.addressLocation}</span>
+            <div className="text-left rtl:text-right">
+              <span className="text-lg font-semibold max-w-xs block">{text.addressLocation}</span>
+              <a 
+                href={MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-[var(--c-accent)] hover:underline"
+              >
+                {text.viewOnMap}
+              </a>
+            </div>
           </div>
         </div>
         <a
